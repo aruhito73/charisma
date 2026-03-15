@@ -1,0 +1,38 @@
+{
+  "updated": "2026-03-08T16:46:43.717Z",
+  "title": "КУБОК РОССИИ (25 сезон)",
+  "matches": [
+    {
+      "round": "1/32 финала",
+      "home": "CHARISMA",
+      "away": "VFC Zvezda Spb",
+      "scoreHome": "3",
+      "scoreAway": "0",
+      "result": "win"
+    },
+    {
+      "round": "1/16 финала",
+      "home": "CHARISMA",
+      "away": "Spartak Moscow",
+      "scoreHome": "4",
+      "scoreAway": "2",
+      "result": "win"
+    },
+    {
+      "round": "1/8 финала",
+      "home": "CHARISMA",
+      "away": "MANYCH OGs",
+      "scoreHome": "4",
+      "scoreAway": "1",
+      "result": "win"
+    },
+    {
+      "round": "Четвертьфинал",
+      "home": "DRAL GAMING",
+      "away": "CHARISMA",
+      "scoreHome": "2",
+      "scoreAway": "0",
+      "result": "loss"
+    }
+  ]
+}

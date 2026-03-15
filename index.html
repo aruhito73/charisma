@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="CHARISMA — профессиональная команда EA FC Pro Clubs. Состав, турниры, трофеи и контакты.">
+  <meta name="keywords" content="CHARISMA, EA FC, Pro Clubs, кибефутбол, cyberfootball, esports">
+  <title>CHARISMA | EA FC Pro Clubs</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css?v=63908651156">
+</head>
+
+<body>
+
+  <!-- Particles BG -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/logo.png" alt="CHARISMA Logo">
+        <span>CHARISMA</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#squad">Состав</a></li>
+        <li><a href="#league">Чемпионат</a></li>
+        <li><a href="#schedule">Расписание</a></li>
+        <li><a href="#cup">Кубок</a></li>
+        <li><a href="#trophies">Трофеи</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-logo">
+        <img src="assets/logo.png" alt="CHARISMA">
+      </div>
+      <h1>CHARISMA</h1>
+      <p class="tagline">EA FC 26 • Pro Clubs</p>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>О <span>команде</span></h2>
+        <p>Профессиональная команда по EA FC Pro Clubs</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h3>Мы — <span>CHARISMA</span></h3>
+          <p>
+            VFC CHARISMA — Digital команда по FIFA 26, объединение кибефутболистов. Основана 16 августа 2024 года. Мы
+            выступаем в режиме Pro Clubs в EA FC 26, участвуем в турнирах на платформе Cyberfootball.online и стремимся
+            к вершине.
+          </p>
+          <p>
+            Наша сила — в командной игре, тактической дисциплине и стремлении к постоянному развитию.
+            Каждый матч — это шаг к новым достижениям.
+          </p>
+        </div>
+        <div class="about-stats reveal" id="aboutStats">
+          <!-- Populated dynamically from JSON -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Squad Section -->
+  <section class="squad" id="squad">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2><span>Состав</span> команды</h2>
+        <p>Наши игроки — наша главная сила</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="squad-grid" id="squadGrid">
+        <!-- Populated dynamically from data/squad.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- League Table Section -->
+  <section class="league" id="league">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 id="leagueTitle">Премьер-Лига <span>25 сезон</span></h2>
+        <p>Таблица чемпионата на Cyberfootball.online</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="table-wrapper reveal">
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Команда</th>
+              <th>И</th>
+              <th>В</th>
+              <th>Н</th>
+              <th>П</th>
+              <th>Голы</th>
+              <th>О</th>
+            </tr>
+          </thead>
+          <tbody id="leagueBody">
+            <!-- Populated dynamically from data/league.json -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-updated reveal" id="leagueUpdated"></div>
+      <div class="tournament-cta reveal">
+        <a href="https://cyberfootball.online/tournament/table/1235" target="_blank" rel="noopener"
+          class="btn btn-outline">
+          📊 Полная таблица на Cyberfootball.online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Section -->
+  <section class="schedule" id="schedule">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Расписание <span>матчей</span></h2>
+        <p>Календарь игр Премьер-Лиги 25 сезон</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="schedule-list reveal" id="scheduleList">
+        <!-- Populated dynamically from data/schedule.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Cup Section -->
+  <section class="cup tournaments" id="cup">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 id="cupTitle">Кубок России <span>25 сезон</span></h2>
+        <p>Путь команды в кубковом турнире</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="cup-path reveal" id="cupPath">
+        <!-- Populated dynamically from data/cup.json -->
+      </div>
+      <div class="tournament-cta reveal">
+        <a href="https://cyberfootball.online/tournament/table/1243" target="_blank" rel="noopener"
+          class="btn btn-outline">
+          🏆 Сетка кубка на Cyberfootball.online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trophies Section -->
+  <section class="trophies" id="trophies">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Наши <span>трофеи</span></h2>
+        <p>История побед и достижений</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="trophies-grid" id="trophiesGrid">
+        <!-- Populated dynamically from data/achievements.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2><span>Контакты</span></h2>
+        <p>Свяжитесь с нами или следите за нашими результатами</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Связаться с нами</h3>
+          <p>
+            Хотите присоединиться к команде, предложить товарищеский матч
+            или сотрудничество? Мы всегда открыты для общения!
+          </p>
+          <div class="contact-links">
+            <a href="https://vk.com/vfccharisma" target="_blank" rel="noopener" class="contact-link">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path
+                    d="M15.073 2H8.937C3.333 2 2 3.333 2 8.927v6.136C2 20.667 3.333 22 8.927 22h6.146C20.667 22 22 20.667 22 15.073V8.937C22 3.333 20.667 2 15.073 2zm3.073 14.27h-1.708c-.646 0-.843-.528-2.004-1.708-1.027-.99-1.48-1.123-1.733-1.123-.354 0-.456.1-.456.593v1.56c0 .422-.135.677-1.25.677-1.842 0-3.89-1.115-5.324-3.193C3.77 10.587 3.26 8.606 3.26 8.125c0-.253.1-.49.593-.49h1.708c.443 0 .612.198.782.66.862 2.487 2.302 4.667 2.896 4.667.222 0 .323-.101.323-.66v-2.565c-.067-1.188-.69-1.29-.69-1.714 0-.202.168-.406.443-.406h2.685c.372 0 .506.2.506.634v3.462c0 .372.168.506.27.506.222 0 .407-.134.813-.54 1.258-1.41 2.158-3.585 2.158-3.585.12-.253.323-.49.766-.49h1.708c.514 0 .625.263.514.634-.205.955-2.195 3.755-2.195 3.755-.175.287-.24.415 0 .735.172.236.74.724 1.122 1.163.706.81 1.25 1.493 1.396 1.962.148.473-.073.717-.555.717z" />
+                </svg>
+              </div>
+              <div>
+                <div class="link-label">ВКонтакте</div>
+                <div class="link-text">VFC CHARISMA</div>
+              </div>
+            </a>
+            <a href="https://discord.gg/" target="_blank" rel="noopener" class="contact-link">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path
+                    d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                </svg>
+              </div>
+              <div>
+                <div class="link-label">Discord</div>
+                <div class="link-text">CHARISMA Server</div>
+              </div>
+            </a>
+            <a href="https://t.me/" target="_blank" rel="noopener" class="contact-link">
+              <div class="icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
+                </svg>
+              </div>
+              <div>
+                <div class="link-label">Telegram</div>
+                <div class="link-text">@charisma_fc</div>
+              </div>
+            </a>
+            <a href="https://cyberfootball.online/clubs/squad/20048" target="_blank" rel="noopener"
+              class="contact-link">
+              <div class="icon">🌐</div>
+              <div>
+                <div class="link-label">Наш профиль</div>
+                <div class="link-text">Cyberfootball.online</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal">
+          <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="text" placeholder="Email / VK / TG / Discord" required>
+            <textarea placeholder="Сообщение" rows="5" required></textarea>
+            <button type="submit" class="btn btn-gold">Отправить сообщение</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2024–2026 CHARISMA. EA FC Pro Clubs.</p>
+        <div class="footer-socials">
+          <a href="https://vk.com/vfccharisma" target="_blank" rel="noopener" aria-label="VK">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M15.073 2H8.937C3.333 2 2 3.333 2 8.927v6.136C2 20.667 3.333 22 8.927 22h6.146C20.667 22 22 20.667 22 15.073V8.937C22 3.333 20.667 2 15.073 2zm3.073 14.27h-1.708c-.646 0-.843-.528-2.004-1.708-1.027-.99-1.48-1.123-1.733-1.123-.354 0-.456.1-.456.593v1.56c0 .422-.135.677-1.25.677-1.842 0-3.89-1.115-5.324-3.193C3.77 10.587 3.26 8.606 3.26 8.125c0-.253.1-.49.593-.49h1.708c.443 0 .612.198.782.66.862 2.487 2.302 4.667 2.896 4.667.222 0 .323-.101.323-.66v-2.565c-.067-1.188-.69-1.29-.69-1.714 0-.202.168-.406.443-.406h2.685c.372 0 .506.2.506.634v3.462c0 .372.168.506.27.506.222 0 .407-.134.813-.54 1.258-1.41 2.158-3.585 2.158-3.585.12-.253.323-.49.766-.49h1.708c.514 0 .625.263.514.634-.205.955-2.195 3.755-2.195 3.755-.175.287-.24.415 0 .735.172.236.74.724 1.122 1.163.706.81 1.25 1.493 1.396 1.962.148.473-.073.717-.555.717z" />
+            </svg>
+          </a>
+          <a href="https://discord.gg/" target="_blank" rel="noopener" aria-label="Discord">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+            </svg>
+          </a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z" />
+            </svg>
+          </a>
+          <a href="https://cyberfootball.online/clubs/squad/20048" target="_blank" rel="noopener"
+            aria-label="Cyberfootball">🌐</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=63908651156"></script>
+</body>
+
+</html>
