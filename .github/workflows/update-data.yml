@@ -14,36 +14,26 @@ permissions:
 
 jobs:
   update-data:
+    # Используем Ubuntu 22.04, так как она полностью совместима с текущими зависимостями Puppeteer
     runs-on: ubuntu-22.04
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Важно для возможности сделать push обратно в репозиторий
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Debug - Env Info
-        run: |
-          pwd
-          node -v
-          npm -v
-          ls -la
+          cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          npm install
-          ls -la node_modules/.bin/ || echo "bin folder empty"
+        run: npm ci
 
-      - name: Install Puppeteer Browser
-        run: |
-          # Try using the bin directly
-          chmod +x ./node_modules/.bin/puppeteer || echo "chmod failed"
-          ./node_modules/.bin/puppeteer browsers install chrome --install-deps
+      - name: Install Puppeteer Browser and System Deps
+        run: npx puppeteer browsers install chrome --install-deps
 
       - name: Run update script
         run: node update-data.js
@@ -53,6 +43,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/*.json
-          # Если изменений нет, git commit вернет ошибку, поэтому используем || echo
           git commit -m "🤖 Автоматическое обновление данных" || echo "Нет новых данных для обновления"
           git push
