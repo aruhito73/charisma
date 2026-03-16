@@ -13,10 +13,27 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
+const ftp = require('basic-ftp');
 
-const CLUB_ID = 20048;
-const LEAGUE_ID = 1235;
-const CUP_ID = 1243;
+// =========================================================================
+// ОСНОВНЫЕ НАСТРОЙКИ СКРЕЙПЕРА
+// Здесь указываются ID вашего клуба и текущих турниров на сайте Cyberfootball.online
+// Чтобы обновить таблицы нового сезона, просто поменяйте ID лиги и кубка здесь!
+// =========================================================================
+const CLUB_ID = 20048; // ID клуба CHARISMA
+const LEAGUE_ID = 1235; // ID текущего сезона лиги
+const CUP_ID = 1243; // ID текущего кубка
+
+// ===== FTP CONFIGURATION =====
+// Данные для автоматической загрузки на хостинг
+const FTP_CONFIG = {
+    enabled: true,
+    host: "ftp6.hostland.ru",
+    user: "host1719768_richmond",
+    password: "!!110238!!", // Correct working password
+    remoteDir: "vfc-charisma.ru/htdocs/www/data" // Стандартная папка для сайтов на Hostland
+};
+// =============================
 
 const URLS = {
     squad: `https://cyberfootball.online/clubs/squad/${CLUB_ID}`,
@@ -35,6 +52,18 @@ async function ensureDataDir() {
 }
 
 async function waitForContent(page) {
+    // Bypass Beget DDOS screen by running their cookie script and reloading if needed
+    try {
+        await page.evaluate(() => {
+            if (document.body.innerText === '') {
+                const script = document.querySelector('script');
+                if (script && script.innerText.includes('set_cookie')) {
+                    eval(script.innerText);
+                }
+            }
+        });
+    } catch (e) { }
+
     await page.waitForSelector('body', { timeout: 15000 });
     await new Promise(r => setTimeout(r, 3000));
 }
@@ -53,45 +82,64 @@ async function scrapeSquad(page) {
     await waitForContent(page);
     await dismissPopup(page);
 
-    const players = await page.evaluate(() => {
-        const rows = document.querySelectorAll('.items-list .item, table.items tbody tr, .squad-list .player-item, .club-squad .player-row');
+    // First, collect all player basic info and their profile links from the table
+    const playersInfo = await page.evaluate(() => {
         const data = [];
-
-        // Try table format
         const tables = document.querySelectorAll('table');
         for (const table of tables) {
             const trs = table.querySelectorAll('tbody tr');
-            if (trs.length === 0) continue;
-
             for (const tr of trs) {
                 const cells = tr.querySelectorAll('td');
                 if (cells.length < 3) continue;
 
-                const text = tr.textContent.trim();
-                if (!text) continue;
-
                 const nameEl = tr.querySelector('a, .player-name, td:nth-child(2)');
                 const name = nameEl ? nameEl.textContent.trim() : '';
+                const link = nameEl && nameEl.tagName === 'A' ? nameEl.href : null;
 
                 if (name) {
                     const cellTexts = Array.from(cells).map(c => c.textContent.trim());
                     data.push({
                         name: name,
+                        link: link,
                         cells: cellTexts
                     });
                 }
             }
         }
-
-        if (data.length === 0) {
-            const allText = document.body.innerText;
-            return { raw: allText, players: [] };
-        }
-
-        return { players: data };
+        return data;
     });
 
-    return players;
+    if (playersInfo.length === 0) {
+        return { raw: "No players found", players: [] };
+    }
+
+    console.log(`   Found ${playersInfo.length} players. Applying manual join dates...`);
+
+    // =========================================================================
+    // РУЧНАЯ НАСТРОЙКА ДАТ РЕГИСТРАЦИИ ИГРОКОВ (ДД.ММ.ГГГГ)
+    // Впишите сюда актуальные даты для каждого игрока.
+    // Если игрока здесь нет, будет отображаться "Неизвестно".
+    // =========================================================================
+    const manualDates = {
+        "Rchmnd": "16.08.2024",
+        "MrHoolio": "16.08.2024",
+        "Istok_2503": "12.09.2024",
+        // Пример добавления:
+        // "Ник_Игрока": "01.01.2025",
+    };
+
+    for (const player of playersInfo) {
+        let joinDate = manualDates[player.name] || "Неизвестно";
+
+        // Append the found date (or dummy) to the cells array so the calculation works
+        let baseDateStr = player.cells[0] || player.name;
+        player.cells[0] = baseDateStr + ` (${joinDate})`; // Embed in first cell for the regex to catch
+
+        // Clean up link to save space in json
+        delete player.link;
+    }
+
+    return { players: playersInfo };
 }
 
 async function scrapeLeague(page) {
@@ -170,17 +218,80 @@ async function scrapeAchievements(page) {
     await dismissPopup(page);
 
     const achievements = await page.evaluate(() => {
-        const items = document.querySelectorAll('.achievement-item, .trophy-item, .award-item');
+        // Find all possible container elements that hold trophies
+        const items = document.querySelectorAll('.col-lg-2.col-md-3.col-sm-4.col-6, .achievement-item, .trophy-item, .award-item');
         const allText = document.body.innerText;
         const data = [];
 
         if (items.length > 0) {
             for (const item of items) {
-                data.push({
-                    title: item.querySelector('h3, .title, .name')?.textContent.trim() || '',
-                    description: item.querySelector('p, .desc, .description')?.textContent.trim() || '',
-                    raw: item.textContent.trim()
-                });
+                // Ignore elements that don't have enough text to be a trophy card
+                if (item.innerText.trim().length < 5) continue;
+
+                // Assuming the generic bootstrap column contains the trophy data
+                const textLines = item.innerText.split('\n').map(t => t.trim()).filter(t => t.length > 0);
+
+                // Usually the first clear line is the title, the rest is description
+                let title = item.querySelector('h3, h4, h5, .title, .name, strong, b')?.textContent.trim();
+                let desc = item.querySelector('p, .desc, .description, span.text-muted')?.textContent.trim();
+
+                if (!title && textLines.length > 0) {
+                    title = textLines[0];
+                }
+                if (!desc && textLines.length > 1) {
+                    desc = textLines.slice(1).join(' ');
+                }
+
+                if (title && !title.toLowerCase().includes('подробнее')) {
+                    // Try to extract an icon or default to trophy
+                    let iconHtml = item.querySelector('img') ? '<img src="' + item.querySelector('img').src + '" style="max-width:50px;">' : '';
+                    data.push({
+                        title: title.replace('Подробнее', '').trim(),
+                        description: (desc || '').replace('Подробнее', '').trim(),
+                        raw: item.textContent.trim(),
+                        iconHtml: iconHtml
+                    });
+                }
+            }
+        }
+
+        // If specific items weren't found, try parsing the raw text by keywords
+        if (data.length === 0) {
+            const lines = allText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+            let start = false;
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].includes('АКТИВНЫЕ ТУРНИРЫ') || lines[i].includes('ТРОФЕЙНАЯ')) start = true;
+                if (lines[i].includes('ACF - БУДЬ СОБОЙ')) start = false;
+
+                if (start && lines[i].length > 4 && !lines[i].includes('Подробнее') && !lines[i].includes('ТРОФЕЙНАЯ') && !lines[i].includes('АКТИВНЫЕ ТУРНИРЫ')) {
+                    // Check if it's an uppercase title (a trophy name)
+                    if (lines[i] === lines[i].toUpperCase() || lines[i].includes('КУБОК') || lines[i].includes('ЗОЛОТО')) {
+                        let title = lines[i];
+                        let desc = '';
+
+                        // Check previous line for count (e.g., "2" before "FAST CUP")
+                        let count = '';
+                        if (i > 0 && /^\d+$/.test(lines[i - 1])) {
+                            count = ` (x${lines[i - 1]})`;
+                        }
+
+                        // Check next line for description
+                        if (i + 1 < lines.length && !lines[i + 1].includes('Подробнее') && !lines[i + 1].includes('ACF - БУДЬ СОБОЙ') && !/^\d+$/.test(lines[i + 1])) {
+                            desc = lines[i + 1];
+                            // Sometimes description is multiline
+                            if (i + 2 < lines.length && !lines[i + 2].includes('Подробнее') && !lines[i + 2].includes('ACF - БУДЬ СОБОЙ') && lines[i + 2] !== lines[i + 2].toUpperCase()) {
+                                desc += ' ' + lines[i + 2];
+                            }
+                        }
+
+                        title = title + count;
+
+                        // Avoid duplicates
+                        if (!data.find(d => d.title.startsWith(lines[i]))) {
+                            data.push({ title, description: desc, raw: '' });
+                        }
+                    }
+                }
             }
         }
 
@@ -252,6 +363,7 @@ async function main() {
 
     try {
         const page = await browser.newPage();
+        console.log('🌐 Browser launched, opening page...');
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
         await page.setViewport({ width: 1280, height: 800 });
 
@@ -319,6 +431,38 @@ async function main() {
         console.log('\n✅ Data updated successfully!');
         console.log(`   📁 Files saved to: ${DATA_DIR}`);
         console.log(`   ⏰ Timestamp: ${timestamp}`);
+
+        // ===== FTP UPLOAD =====
+        if (FTP_CONFIG.enabled) {
+            console.log('\n🚀 Starting FTP upload to Hostland...');
+            const { execSync } = require('child_process');
+            try {
+                const files = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json'));
+                const remoteBase = `ftp://${FTP_CONFIG.user}:${FTP_CONFIG.password}@${FTP_CONFIG.host}/${FTP_CONFIG.remoteDir}/`;
+
+                for (const file of files) {
+                    process.stdout.write(`   Uploading ${file}... `);
+                    const localFile = path.join(DATA_DIR, file);
+                    const remoteUrl = remoteBase + file;
+                    // Утилита curl в Windows загружает файлы гораздо надежнее базового FTP
+                    // Используем curl.exe в Windows и просто curl в Linux/Mac
+                    const curlCmd = process.platform === 'win32' ? 'curl.exe' : 'curl';
+                    // Убираем stdio: 'ignore', чтобы видеть ошибки если они есть
+                    execSync(`${curlCmd} -s -S --ftp-create-dirs -T "${localFile}" "${remoteUrl}"`, { stdio: 'inherit' });
+                    console.log('✅ Done');
+                }
+                console.log('\n✨ All files uploaded to server successfully!');
+            } catch (err) {
+                console.error('\n❌ FTP Upload Error Details:');
+                console.error(err.message);
+                if (err.stdout) console.error('Stdout:', err.stdout.toString());
+                if (err.stderr) console.error('Stderr:', err.stderr.toString());
+                console.log('   Check your FTP_CONFIG in update-data.js');
+                process.exit(1);
+            }
+        } else {
+            console.log('\nℹ️  FTP upload skipped (FTP_CONFIG.enabled is false)');
+        }
 
     } catch (error) {
         console.error('❌ Error:', error.message);

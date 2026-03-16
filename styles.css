@@ -1,21 +1,47 @@
 /* ===== CHARISMA — Design System ===== */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
 
+/* 
+==========================================================================
+ОСНОВНЫЕ ЦВЕТА И НАСТРОЙКИ САЙТА
+Если вы хотите изменить цветовую гамму (например, сделать сайт синим или красным),
+меняйте переменные ниже. --gold — основной акцентный цвет.
+========================================================================== 
+*/
 :root {
+  /* Фоны */
   --bg-primary: #0a0a0a;
+  /* Главный фон сайта */
   --bg-secondary: #111111;
+  /* Фон вторичных секций (О команде, Турниры) */
   --bg-card: rgba(255, 255, 255, 0.04);
+  /* Фон карточек игроков и статистики */
   --bg-card-hover: rgba(255, 255, 255, 0.08);
+  /* Фон карточек при наведении */
+
+  /* Акцентные цвета (сейчас золотые) */
   --gold: #c9a84c;
   --gold-light: #e0c96a;
   --gold-dark: #a08530;
   --gold-gradient: linear-gradient(135deg, #c9a84c 0%, #e0c96a 50%, #a08530 100%);
+
+  /* Тексты */
   --text-primary: #ffffff;
+  /* Основной белый текст */
   --text-secondary: rgba(255, 255, 255, 0.65);
+  /* Вторичный сероватый текст */
   --text-muted: rgba(255, 255, 255, 0.35);
+  /* Тусклый текст */
+
+  /* Линии и свечение */
   --border: rgba(255, 255, 255, 0.08);
+  /* Обычные рамки карточек */
   --border-gold: rgba(201, 168, 76, 0.3);
+  /* Акцентные рамки карточек */
   --glow-gold: 0 0 30px rgba(201, 168, 76, 0.15);
+  /* Эффект свечения */
+
+  /* Размеры скруглений окон и анимации */
   --radius: 16px;
   --radius-sm: 10px;
   --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1416,6 +1442,42 @@ section {
   .stat-card .number {
     font-size: 2rem;
   }
+}
+
+/* ===== Streams ===== */
+.streams {
+  background: var(--bg-primary);
+}
+
+.stream-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--glow-gold);
+  transition: var(--transition);
+}
+
+.twitch-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+  height: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #000;
+}
+
+.twitch-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* ===== Particle BG (decorative) ===== */

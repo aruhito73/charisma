@@ -1,0 +1,6 @@
+open ftp6.hostland.ru
+host1719768_richmond
+!!110238!!
+pwd
+dir
+quit

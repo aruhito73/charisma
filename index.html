@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO-настройки и заголовок вкладки в браузере -->
   <meta name="description"
     content="CHARISMA — профессиональная команда EA FC Pro Clubs. Состав, турниры, трофеи и контакты.">
   <meta name="keywords" content="CHARISMA, EA FC, Pro Clubs, кибефутбол, cyberfootball, esports">
@@ -30,6 +31,7 @@
         <li><a href="#league">Чемпионат</a></li>
         <li><a href="#schedule">Расписание</a></li>
         <li><a href="#cup">Кубок</a></li>
+        <li><a href="#streams">Стримы</a></li>
         <li><a href="#trophies">Трофеи</a></li>
         <li><a href="#contact">Контакты</a></li>
       </ul>
@@ -47,6 +49,7 @@
       <div class="hero-logo">
         <img src="assets/logo.png" alt="CHARISMA">
       </div>
+      <!-- Текст на главном, первом экране сайта -->
       <h1>CHARISMA</h1>
       <p class="tagline">EA FC 26 • Pro Clubs</p>
     </div>
@@ -60,12 +63,14 @@
   <section class="about" id="about">
     <div class="container">
       <div class="section-header reveal">
+        <!-- Заголовок блока "О команде" (span делает текст золотым) -->
         <h2>О <span>команде</span></h2>
         <p>Профессиональная команда по EA FC Pro Clubs</p>
         <div class="section-divider"></div>
       </div>
       <div class="about-grid">
         <div class="about-text reveal">
+          <!-- Основной текст-описание команды. Здесь можно менять историю и описание. -->
           <h3>Мы — <span>CHARISMA</span></h3>
           <p>
             VFC CHARISMA — Digital команда по FIFA 26, объединение кибефутболистов. Основана 16 августа 2024 года. Мы
@@ -127,6 +132,7 @@
       </div>
       <div class="table-updated reveal" id="leagueUpdated"></div>
       <div class="tournament-cta reveal">
+        <!-- Ссылка на страницу лиги на сайте ACF. Измените href на актуальную ссылку нового сезона! -->
         <a href="https://cyberfootball.online/tournament/table/1235" target="_blank" rel="noopener"
           class="btn btn-outline">
           📊 Полная таблица на Cyberfootball.online
@@ -161,9 +167,34 @@
         <!-- Populated dynamically from data/cup.json -->
       </div>
       <div class="tournament-cta reveal">
+        <!-- Ссылка на страницу кубка на сайте ACF. Измените href на актуальную ссылку нового кубка! -->
         <a href="https://cyberfootball.online/tournament/table/1243" target="_blank" rel="noopener"
           class="btn btn-outline">
           🏆 Сетка кубка на Cyberfootball.online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Streams Section -->
+  <section class="streams" id="streams">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Стримы <span>матчей</span></h2>
+        <p>Прямые трансляции наших игр</p>
+        <div class="section-divider"></div>
+      </div>
+      <div class="stream-wrapper reveal">
+        <div class="twitch-container">
+          <iframe
+            src="https://player.twitch.tv/?channel=6y6c&parent=charisma.vercel.app&parent=vfccharisma.vercel.app&parent=vfc-charisma.vercel.app&parent=vfc-charisma.ru&parent=charisma-kappa.vercel.app&parent=charisma-pdq6bkqga-kirills-projects-f2048a15.vercel.app&parent=localhost&parent=127.0.0.1"
+            frameborder="0" allowfullscreen="true" scrolling="no">
+          </iframe>
+        </div>
+      </div>
+      <div class="tournament-cta reveal">
+        <a href="https://www.twitch.tv/6y6c" target="_blank" rel="noopener" class="btn btn-outline">
+          📺 Канал на Twitch
         </a>
       </div>
     </div>
@@ -193,11 +224,13 @@
       </div>
       <div class="contact-grid">
         <div class="contact-info reveal">
+          <!-- Текст в блоке контактов -->
           <h3>Связаться с нами</h3>
           <p>
             Хотите присоединиться к команде, предложить товарищеский матч
             или сотрудничество? Мы всегда открыты для общения!
           </p>
+          <!-- Ссылки на социальные сети. Меняйте href="" на ваши актуальные ссылки -->
           <div class="contact-links">
             <a href="https://vk.com/vfccharisma" target="_blank" rel="noopener" class="contact-link">
               <div class="icon">
@@ -261,6 +294,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
+        <!-- Текст копирайта в самом низу страницы -->
         <p>© 2024–2026 CHARISMA. EA FC Pro Clubs.</p>
         <div class="footer-socials">
           <a href="https://vk.com/vfccharisma" target="_blank" rel="noopener" aria-label="VK">

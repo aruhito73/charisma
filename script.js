@@ -59,22 +59,13 @@ function renderSquad(data) {
     const goals = p.goals !== undefined ? p.goals : (p.cells ? parseInt(p.cells[4]) || 0 : 0);
     const assists = p.assists !== undefined ? p.assists : (p.cells ? parseInt(p.cells[5]) || 0 : 0);
     const ratingStr = p.cells ? p.cells[p.cells.length - 1] : '0';
-    // Calculate days in club from the raw registration date in the name string if available
-    let daysInClub = '?';
+
+    // Extract join date from the name string if available
+    let joinDateRaw = 'Неизвестно';
     const nameCellStr = p.cells ? p.cells[0] : (p.name || '');
     const dateMatch = nameCellStr.match(/(\d{2})\.(\d{2})\.(\d{4})/);
     if (dateMatch) {
-      const regDate = new Date(`${dateMatch[3]}-${dateMatch[2]}-${dateMatch[1]}`);
-      const now = new Date();
-      const diffTime = now.getTime() - regDate.getTime();
-      if (diffTime > 0) {
-        daysInClub = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      } else {
-        daysInClub = 0;
-      }
-    } else {
-      // If tracking not found in raw data or set to "Неизвестно"
-      daysInClub = '?';
+      joinDateRaw = `${dateMatch[1]}.${dateMatch[2]}.${dateMatch[3]}`;
     }
 
     const isNewPlayer = matches === 0;
@@ -101,8 +92,8 @@ function renderSquad(data) {
             <div class="player-stat-label">Ассисты</div>
           </div>
           <div class="player-stat">
-            <div class="player-stat-value">${daysInClub}</div>
-            <div class="player-stat-label">Дни в клубе</div>
+            <div class="player-stat-value" style="font-size: 1rem; margin-top: 4px;">${joinDateRaw}</div>
+            <div class="player-stat-label">Дата вступления</div>
           </div>
         </div>
         `}
@@ -318,13 +309,29 @@ function renderTrophies(data) {
   const grid = document.getElementById('trophiesGrid');
   if (!grid || !data?.achievements) return;
 
-  grid.innerHTML = data.achievements.map(a => `
+  grid.innerHTML = data.achievements.map(a => {
+    let icon = '🏆';
+    let titleUpper = a.title.toUpperCase();
+    if (titleUpper.includes('СЕРЕБР')) icon = '🥈';
+    else if (titleUpper.includes('БРОНЗ')) icon = '🥉';
+
+    // Fallback descriptions if the site scraper missed them or they don't exist
+    let desc = a.description;
+    if (!desc && titleUpper.includes('БРОНЗОВЫЙ ТРОФЕЙ КУБКА РОССИИ')) {
+      desc = 'Выдается за попадание в ТОП-4 (полуфинал) в Кубке России Cyberfootball.online';
+    }
+    if (!desc && titleUpper.includes('СЕРЕБРЯНЫЙ КУБОК ПФЛ')) {
+      desc = 'Выдается за 2-е место в Профессиональной Футбольной Лиге';
+    }
+
+    return `
     <div class="trophy-card reveal">
-      ${a.iconHtml ? `<div class="trophy-icon">${a.iconHtml}</div>` : `<div class="trophy-icon">🏆</div>`}
+      <div class="trophy-icon" style="font-family: 'Segoe UI Emoji', sans-serif;">${a.iconHtml ? a.iconHtml : icon}</div>
       <h3>${a.title}</h3>
-      ${a.description ? `<p>${a.description}</p>` : ''}
+      ${desc ? `<p>${desc}</p>` : ''}
     </div>
-  `).join('');
+    `;
+  }).join('');
 
   // Update trophy count in about stats
   const countEl = document.getElementById('trophyCount');
