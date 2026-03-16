@@ -20,23 +20,16 @@ jobs:
           # Важно для возможности сделать push обратно в репозиторий
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgbm-dev libnss3 libatk-bridge2.0-0 libxkbcommon0 libxdamage1 libpango-1.0-0 libcairo2 libxcomposite1 libasound2
-
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Puppeteer хорошо работает на 18+
+          node-version: '20' # LTS version
 
       - name: Install dependencies
         run: npm install
 
-      # Устанавливаем системные зависимости для Puppeteer на Linux
-      - name: Install Puppeteer dependencies
-        run: npx puppeteer browsers install chrome
+      - name: Install Puppeteer with system dependencies
+        run: npx puppeteer browsers install chrome --install-deps
 
       - name: Run update script
         run: node update-data.js
