@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Install Puppeteer Browser and System Deps
-        run: npx puppeteer browsers install chrome --install-deps
+        run: sudo npx puppeteer browsers install chrome --install-deps
 
       - name: Run update script
         run: node update-data.js
