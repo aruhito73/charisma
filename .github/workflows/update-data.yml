@@ -1,6 +1,8 @@
 name: Auto Update Data
 
 on:
+  push:
+    branches: [ main ]
   schedule:
     # Запускать каждый день в 12:00 и 21:00 по UTC (15:00 и 00:00 по Москве)
     - cron: '0 12,21 * * *'
