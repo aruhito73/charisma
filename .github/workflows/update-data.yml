@@ -37,9 +37,7 @@ jobs:
         run: npm install
 
       - name: Install Puppeteer Browser
-        run: |
-          # Use the locally installed puppeteer to ensure version match
-          ./node_modules/.bin/puppeteer browsers install chrome --install-deps
+        run: npm run install-puppeteer
 
       - name: Run update script
         run: node update-data.js

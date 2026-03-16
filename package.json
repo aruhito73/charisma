@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "install-puppeteer": "puppeteer browsers install chrome --install-deps"
+  },
   "dependencies": {
     "basic-ftp": "^5.2.0",
     "puppeteer": "^24.38.0"
