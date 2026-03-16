@@ -27,17 +27,23 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Environment Info
+      - name: Debug - Env Info
         run: |
+          pwd
           node -v
           npm -v
-          ls -R
+          ls -la
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          ls -la node_modules/.bin/ || echo "bin folder empty"
 
       - name: Install Puppeteer Browser
-        run: npm run install-puppeteer
+        run: |
+          # Try using the bin directly
+          chmod +x ./node_modules/.bin/puppeteer || echo "chmod failed"
+          ./node_modules/.bin/puppeteer browsers install chrome --install-deps
 
       - name: Run update script
         run: node update-data.js
