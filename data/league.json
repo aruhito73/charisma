@@ -1,9 +1,9 @@
 {
-  "updated": "2026-03-18T13:21:52.451Z",
+  "updated": "2026-03-18T21:39:16.957Z",
   "title": "PREMIER LEAGUE (SEASON 25)",
   "standings": [
     {
-      "position": "1\t\t\t\t\t\t\t\t\t+1",
+      "position": "1\t\t\t\t\t\t\t\t\t-1",
       "team": "",
       "cells": [
         "Krasnodar eSports",
@@ -17,85 +17,85 @@
       ]
     },
     {
-      "position": "2\t\t\t\t\t\t\t\t\t+6",
+      "position": "2\t\t\t\t\t\t\t\t\t-6",
       "team": "",
       "cells": [
         "Confession",
-        "25",
-        "16",
+        "26",
+        "17",
         "6",
         "3",
-        "42:14",
-        "54",
+        "45:14",
+        "57",
         ""
       ]
     },
     {
-      "position": "3\t\t\t\t\t\t\t\t\t-1",
+      "position": "3\t\t\t\t\t\t\t\t\t+1",
       "team": "",
       "cells": [
         "Darkside eSports",
-        "25",
-        "15",
+        "26",
+        "16",
         "2",
         "8",
-        "51:27",
-        "47",
+        "56:29",
+        "50",
         ""
       ]
     },
     {
-      "position": "4\t\t\t\t\t\t\t\t\t-3",
+      "position": "4\t\t\t\t\t\t\t\t\t+3",
       "team": "",
       "cells": [
         "Ponedelnik",
-        "25",
-        "13",
+        "26",
+        "14",
         "7",
         "5",
-        "47:19",
+        "50:20",
+        "49",
+        ""
+      ]
+    },
+    {
+      "position": "5\t\t\t\t\t\t\t\t\t+4",
+      "team": "",
+      "cells": [
+        "Nemesis",
+        "27",
+        "13",
+        "7",
+        "7",
+        "41:26",
         "46",
         ""
       ]
     },
     {
-      "position": "5\t\t\t\t\t\t\t\t\t-4",
-      "team": "",
-      "cells": [
-        "Nemesis",
-        "26",
-        "12",
-        "7",
-        "7",
-        "38:25",
-        "43",
-        ""
-      ]
-    },
-    {
-      "position": "6\t\t\t\t\t\t\t\t\t+6",
+      "position": "6\t\t\t\t\t\t\t\t\t-6",
       "team": "",
       "cells": [
         "CHARISMA",
-        "24",
+        "25",
         "12",
         "6",
-        "6",
-        "46:31",
+        "7",
+        "46:34",
         "42",
         ""
       ]
     },
     {
-      "position": "7\t\t\t\t\t\t\t\t\t+3",
+      "position": "7\t\t\t\t\t\t\t\t\t-3",
       "team": "",
       "cells": [
         "DRAL GAMING",
-        "24",
+        "25",
         "11",
         "8",
-        "5",
-        "34:15",
+        "6",
+        "35:18",
         "41",
         ""
       ]
@@ -105,115 +105,115 @@
       "team": "",
       "cells": [
         "VFC SUNRISE",
-        "23",
+        "24",
         "12",
         "4",
-        "7",
-        "34:22",
+        "8",
+        "34:25",
         "40",
         ""
       ]
     },
     {
-      "position": "9\t\t\t\t\t\t\t\t\t-2",
+      "position": "9\t\t\t\t\t\t\t\t\t+2",
       "team": "",
       "cells": [
         "MANYCH TEAM",
-        "25",
+        "26",
         "10",
         "6",
-        "9",
-        "36:36",
+        "10",
+        "36:38",
         "36",
         ""
       ]
     },
     {
-      "position": "10\t\t\t\t\t\t\t\t\t-1",
+      "position": "10\t\t\t\t\t\t\t\t\t-5",
+      "team": "",
+      "cells": [
+        "KOBRA",
+        "27",
+        "9",
+        "8",
+        "10",
+        "33:30",
+        "35",
+        ""
+      ]
+    },
+    {
+      "position": "11\t\t\t\t\t\t\t\t\t-5",
+      "team": "",
+      "cells": [
+        "Raiders",
+        "26",
+        "10",
+        "5",
+        "11",
+        "32:28",
+        "35",
+        ""
+      ]
+    },
+    {
+      "position": "12\t\t\t\t\t\t\t\t\t+1",
       "team": "",
       "cells": [
         "VFC BULLS",
-        "26",
+        "27",
         "8",
         "9",
-        "9",
-        "37:37",
+        "10",
+        "39:42",
         "33",
         ""
       ]
     },
     {
-      "position": "11\t\t\t\t\t\t\t\t\t+5",
-      "team": "",
-      "cells": [
-        "KOBRA",
-        "26",
-        "8",
-        "8",
-        "10",
-        "29:29",
-        "32",
-        ""
-      ]
-    },
-    {
-      "position": "12\t\t\t\t\t\t\t\t\t+5",
-      "team": "",
-      "cells": [
-        "Raiders",
-        "25",
-        "9",
-        "5",
-        "11",
-        "30:28",
-        "32",
-        ""
-      ]
-    },
-    {
-      "position": "13\t\t\t\t\t\t\t\t\t-6",
+      "position": "13\t\t\t\t\t\t\t\t\t+6",
       "team": "",
       "cells": [
         "FC DYSHNO",
-        "25",
-        "8",
+        "26",
+        "9",
         "6",
         "11",
-        "28:42",
-        "30",
+        "31:42",
+        "33",
         ""
       ]
     },
     {
-      "position": "14\t\t\t\t\t\t\t\t\t-5",
+      "position": "14\t\t\t\t\t\t\t\t\t+5",
       "team": "",
       "cells": [
         "VFC RED STAR",
-        "26",
+        "27",
         "5",
         "2",
-        "19",
-        "22:77",
+        "20",
+        "23:81",
         "17",
         ""
       ]
     },
     {
-      "position": "15\t\t\t\t\t\t\t\t\t-2",
+      "position": "15\t\t\t\t\t\t\t\t\t+2",
       "team": "",
       "cells": [
         "VFC Cosmos",
-        "25",
+        "26",
         "3",
         "1",
-        "21",
-        "18:56",
+        "22",
+        "19:59",
         "10",
         ""
       ]
     },
     {
-      "position": "16\t\t\t\t\t\t\t\t\t-2",
+      "position": "16\t\t\t\t\t\t\t\t\t+2",
       "team": "",
       "cells": [
         "Echelon FC",
