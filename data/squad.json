@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-20T13:08:12.753Z",
+  "updated": "2026-03-20T21:35:27.248Z",
   "players": [
     {
       "name": "125",
@@ -181,27 +181,6 @@
       "avatar": "assets/avatars/lily60mili.png"
     },
     {
-      "name": "x-wh1ty-_-I0",
-      "cells": [
-        "x-wh1ty-_-I0 (Неизвестно)",
-        "",
-        "RM",
-        "55",
-        "32",
-        "15",
-        "22",
-        "12",
-        "0",
-        "2",
-        "60",
-        "0",
-        "0",
-        "76",
-        "7.3"
-      ],
-      "avatar": "assets/avatars/x-wh1ty-_-i0.png"
-    },
-    {
       "name": "Rchmnd",
       "cells": [
         "Rchmnd                                \n                                                                     (M) (16.08.2024)",
@@ -263,6 +242,27 @@
         "7.8"
       ],
       "avatar": "assets/avatars/butyash.png"
+    },
+    {
+      "name": "x-wh1ty-_-I0",
+      "cells": [
+        "x-wh1ty-_-I0 (Неизвестно)",
+        "",
+        "ST",
+        "55",
+        "32",
+        "15",
+        "22",
+        "12",
+        "0",
+        "2",
+        "60",
+        "0",
+        "0",
+        "76",
+        "7.3"
+      ],
+      "avatar": "assets/avatars/x-wh1ty-_-i0.png"
     },
     {
       "name": "Belarussianhope",
