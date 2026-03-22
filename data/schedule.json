@@ -1,212 +1,212 @@
 {
-  "updated": "2026-03-22T09:49:02.688Z",
+  "updated": "2026-03-22T10:17:40.783Z",
   "matches": [
     {
-      "round": "1 round",
-      "date": "20 Jan 2026, 22:30",
+      "round": "1 тур",
+      "date": "20 янв. 2026, 22:30",
       "home": "DRAL GAMING",
       "away": "CHARISMA",
       "score": "1:1"
     },
     {
-      "round": "3 round",
-      "date": "22 Jan 2026, 22:30",
+      "round": "3 тур",
+      "date": "22 янв. 2026, 22:30",
       "home": "CHARISMA",
       "away": "VFC Cosmos",
       "score": "3:0"
     },
     {
-      "round": "4 round",
-      "date": "27 Jan 2026, 22:30",
+      "round": "4 тур",
+      "date": "27 янв. 2026, 22:30",
       "home": "CHARISMA",
       "away": "Krasnodar eSports",
       "score": "1:1"
     },
     {
-      "round": "2 round",
-      "date": "28 Jan 2026, 22:10",
+      "round": "2 тур",
+      "date": "28 янв. 2026, 22:10",
       "home": "FC DYSHNO",
       "away": "CHARISMA",
       "score": "1:2"
     },
     {
-      "round": "5 round",
-      "date": "28 Jan 2026, 22:30",
+      "round": "5 тур",
+      "date": "28 янв. 2026, 22:30",
       "home": "CHARISMA",
       "away": "VFC RED STAR",
       "score": "3:1"
     },
     {
-      "round": "6 round",
-      "date": "29 Jan 2026, 22:30",
+      "round": "6 тур",
+      "date": "29 янв. 2026, 22:30",
       "home": "KOBRA",
       "away": "CHARISMA",
       "score": "1:1"
     },
     {
-      "round": "7 round",
-      "date": "03 Feb 2026, 22:30",
+      "round": "7 тур",
+      "date": "03 февр. 2026, 22:30",
       "home": "Echelon FC",
       "away": "CHARISMA",
       "score": "0:3"
     },
     {
-      "round": "10 round",
-      "date": "10 Feb 2026, 22:30",
+      "round": "10 тур",
+      "date": "10 февр. 2026, 22:30",
       "home": "CHARISMA",
       "away": "Ponedelnik",
       "score": "1:2"
     },
     {
-      "round": "8 round",
-      "date": "10 Feb 2026, 23:00",
+      "round": "8 тур",
+      "date": "10 февр. 2026, 23:00",
       "home": "Nemesis",
       "away": "CHARISMA",
       "score": "1:3"
     },
     {
-      "round": "11 round",
-      "date": "11 Feb 2026, 22:30",
+      "round": "11 тур",
+      "date": "11 февр. 2026, 22:30",
       "home": "CHARISMA",
       "away": "Confession",
       "score": "1:1"
     },
     {
-      "round": "12 round",
-      "date": "12 Feb 2026, 22:30",
+      "round": "12 тур",
+      "date": "12 февр. 2026, 22:30",
       "home": "Raiders",
       "away": "CHARISMA",
       "score": "0:1"
     },
     {
-      "round": "9 round",
-      "date": "12 Feb 2026, 23:00",
+      "round": "9 тур",
+      "date": "12 февр. 2026, 23:00",
       "home": "CHARISMA",
       "away": "VFC SUNRISE",
       "score": "0:1"
     },
     {
-      "round": "13 round",
-      "date": "18 Feb 2026, 23:00",
+      "round": "13 тур",
+      "date": "18 февр. 2026, 23:00",
       "home": "Darkside eSports",
       "away": "CHARISMA",
       "score": "4:1"
     },
     {
-      "round": "15 round",
-      "date": "19 Feb 2026, 22:30",
+      "round": "15 тур",
+      "date": "19 февр. 2026, 22:30",
       "home": "VFC BULLS",
       "away": "CHARISMA",
       "score": "5:3"
     },
     {
-      "round": "14 round",
-      "date": "19 Feb 2026, 23:00",
+      "round": "14 тур",
+      "date": "19 февр. 2026, 23:00",
       "home": "MANYCH TEAM",
       "away": "CHARISMA",
       "score": "1:3"
     },
     {
-      "round": "16 round",
-      "date": "24 Feb 2026, 22:30",
+      "round": "16 тур",
+      "date": "24 февр. 2026, 22:30",
       "home": "CHARISMA",
       "away": "DRAL GAMING",
       "score": "1:1"
     },
     {
-      "round": "18 round",
-      "date": "26 Feb 2026, 22:30",
+      "round": "18 тур",
+      "date": "26 февр. 2026, 22:30",
       "home": "VFC Cosmos",
       "away": "CHARISMA",
       "score": "1:3"
     },
     {
-      "round": "19 round",
-      "date": "03 Mar 2026, 22:30",
+      "round": "19 тур",
+      "date": "03 марта 2026, 22:30",
       "home": "Krasnodar eSports",
       "away": "CHARISMA",
       "score": "3:0"
     },
     {
-      "round": "20 round",
-      "date": "04 Mar 2026, 22:30",
+      "round": "20 тур",
+      "date": "04 марта 2026, 22:30",
       "home": "VFC RED STAR",
       "away": "CHARISMA",
       "score": "0:4"
     },
     {
-      "round": "17 round",
-      "date": "04 Mar 2026, 23:00",
+      "round": "17 тур",
+      "date": "04 марта 2026, 23:00",
       "home": "CHARISMA",
       "away": "FC DYSHNO",
       "score": "4:0"
     },
     {
-      "round": "21 round",
-      "date": "05 Mar 2026, 22:30",
+      "round": "21 тур",
+      "date": "05 марта 2026, 22:30",
       "home": "CHARISMA",
       "away": "KOBRA",
       "score": "3:2"
     },
     {
-      "round": "22 round",
-      "date": "10 Mar 2026, 22:30",
+      "round": "22 тур",
+      "date": "10 марта 2026, 22:30",
       "home": "CHARISMA",
       "away": "Echelon FC",
       "score": "3:0"
     },
     {
-      "round": "23 round",
-      "date": "11 Mar 2026, 22:30",
+      "round": "23 тур",
+      "date": "11 марта 2026, 22:30",
       "home": "CHARISMA",
       "away": "Nemesis",
       "score": "1:1"
     },
     {
-      "round": "25 round",
-      "date": "17 Mar 2026, 22:30",
+      "round": "25 тур",
+      "date": "17 марта 2026, 22:30",
       "home": "Ponedelnik",
       "away": "CHARISMA",
       "score": "3:0"
     },
     {
-      "round": "26 round",
-      "date": "18 Mar 2026, 22:30",
+      "round": "26 тур",
+      "date": "18 марта 2026, 22:30",
       "home": "Confession",
       "away": "CHARISMA",
       "score": "3:0"
     },
     {
-      "round": "27 round",
-      "date": "19 Mar 2026, 22:30",
+      "round": "27 тур",
+      "date": "19 марта 2026, 22:30",
       "home": "CHARISMA",
       "away": "Raiders",
       "score": "3:0"
     },
     {
-      "round": "24 round",
-      "date": "19 Mar 2026, 23:00",
+      "round": "24 тур",
+      "date": "19 марта 2026, 23:00",
       "home": "VFC SUNRISE",
       "away": "CHARISMA",
       "score": "0:2"
     },
     {
-      "round": "28 round",
-      "date": "24 Mar 2026, 22:30",
+      "round": "28 тур",
+      "date": "24 марта 2026, 22:30",
       "home": "CHARISMA",
       "away": "Darkside eSports",
       "score": "-:-"
     },
     {
-      "round": "29 round",
-      "date": "25 Mar 2026, 22:30",
+      "round": "29 тур",
+      "date": "25 марта 2026, 22:30",
       "home": "CHARISMA",
       "away": "MANYCH TEAM",
       "score": "-:-"
     },
     {
-      "round": "30 round",
-      "date": "26 Mar 2026, 22:30",
+      "round": "30 тур",
+      "date": "26 марта 2026, 22:30",
       "home": "CHARISMA",
       "away": "VFC BULLS",
       "score": "-:-"
