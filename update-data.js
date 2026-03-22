@@ -217,59 +217,64 @@ async function scrapeAchievements(page) {
     await waitForContent(page);
     await dismissPopup(page);
 
-    const achievements = await page.evaluate(() => {
-        // New structure uses .media objects for trophies
+    // Сначала собираем ссылки на страницы подробностей каждого трофея
+    const rewardLinks = await page.evaluate(() => {
+        const links = [];
         const items = document.querySelectorAll('.media.push-down-20.equal-block');
-        const allText = document.body.innerText;
-        const data = [];
+        items.forEach(item => {
+            const linkEl = item.querySelector('a.dotted-link');
+            const titleEl = item.querySelector('.black-head');
+            const imgEl = item.querySelector('.media-left img.media-object');
+            const countEl = item.querySelector('.dv-achievement-count');
 
-        if (items.length > 0) {
-            for (const item of items) {
-                const titleEl = item.querySelector('.black-head');
-                const descEl = item.querySelector('.fs12');
-                const imgEl = item.querySelector('.media-left img.media-object');
-
-                const title = titleEl ? titleEl.textContent.trim() : '';
-                const desc = descEl ? descEl.textContent.trim() : '';
-                const iconHtml = imgEl ? `<img src="${imgEl.src}" style="max-width:50px;">` : '';
-
-                if (title) {
-                    data.push({
-                        title: title.replace('Подробнее', '').trim(),
-                        description: (desc || '').replace('Подробнее', '').trim(),
-                        raw: '',
-                        iconHtml: iconHtml
-                    });
-                }
+            if (linkEl && linkEl.href) {
+                links.push({
+                    url: linkEl.href,
+                    title: titleEl ? titleEl.textContent.trim() : 'Трофей',
+                    iconHtml: imgEl ? `<img src="${imgEl.src}" style="max-width:50px;">` : '',
+                    count: countEl ? countEl.textContent.trim() : ''
+                });
             }
-        }
-
-        // Fallback for legacy items or unexpected structure
-        if (data.length === 0) {
-            const legacyItems = document.querySelectorAll('.col-lg-2.col-md-3.col-sm-4.col-6, .achievement-item, .trophy-item, .award-item');
-            if (legacyItems.length > 0) {
-                for (const item of legacyItems) {
-                    if (item.innerText.trim().length < 5) continue;
-                    const textLines = item.innerText.split('\n').map(t => t.trim()).filter(t => t.length > 0);
-                    let title = item.querySelector('h3, h4, h5, .title, .name, strong, b')?.textContent.trim() || textLines[0];
-                    let desc = item.querySelector('p, .desc, .description, span.text-muted')?.textContent.trim() || (textLines.length > 1 ? textLines.slice(1).join(' ') : '');
-                    if (title && !title.toLowerCase().includes('подробнее')) {
-                        let iconHtml = item.querySelector('img') ? `<img src="${item.querySelector('img').src}" style="max-width:50px;">` : '';
-                        data.push({
-                            title: title.replace('Подробнее', '').trim(),
-                            description: (desc || '').replace('Подробнее', '').trim(),
-                            raw: '',
-                            iconHtml: iconHtml
-                        });
-                    }
-                }
-            }
-        }
-
-        return { achievements: data, raw: allText.substring(0, 5000) };
+        });
+        return links;
     });
 
-    return achievements;
+    const data = [];
+    console.log(`   Found ${rewardLinks.length} trophies. Extracting full descriptions...`);
+
+    for (const link of rewardLinks) {
+        process.stdout.write(`      - ${link.title}... `);
+        try {
+            await page.goto(link.url, { waitUntil: 'networkidle2', timeout: 15000 });
+            const fullDesc = await page.evaluate(() => {
+                const container = document.querySelector('.inner-content-block .col-md-10');
+                if (!container) return '';
+                const paragraphs = Array.from(container.querySelectorAll('p'));
+                // Пропускаем первый абзац (там обычно написано "Обладатель трофея")
+                // И объединяем остальные в одну строку
+                return paragraphs.slice(1)
+                    .map(p => p.textContent.trim())
+                    .filter(p => p.length > 0)
+                    .join(' ');
+            });
+
+            data.push({
+                title: link.title + (link.count && link.count !== '1' ? ` (x${link.count})` : ''),
+                description: fullDesc || 'Описание отсутствует',
+                iconHtml: link.iconHtml
+            });
+            console.log('✅');
+        } catch (err) {
+            console.log('❌ (using truncated)');
+            data.push({
+                title: link.title + (link.count && link.count !== '1' ? ` (x${link.count})` : ''),
+                description: 'Не удалось загрузить полное описание',
+                iconHtml: link.iconHtml
+            });
+        }
+    }
+
+    return { achievements: data, raw: '' };
 }
 
 async function scrapeSchedule(page) {
