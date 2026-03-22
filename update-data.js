@@ -338,6 +338,10 @@ async function main() {
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
         await page.setViewport({ width: 1280, height: 800 });
 
+        // Переключаем язык на русский через системную ссылку
+        console.log('🇷🇺 Setting language to Russian...');
+        await page.goto('https://cyberfootball.online/arena/language?s=ru', { waitUntil: 'networkidle2' });
+
         const squadData = await scrapeSquad(page);
         const leagueData = await scrapeLeague(page);
         const cupData = await scrapeCup(page);
