@@ -218,82 +218,56 @@ async function scrapeAchievements(page) {
     await dismissPopup(page);
 
     const achievements = await page.evaluate(() => {
-        // Find all possible container elements that hold trophies
-        const items = document.querySelectorAll('.col-lg-2.col-md-3.col-sm-4.col-6, .achievement-item, .trophy-item, .award-item');
+        // New structure uses .media objects for trophies
+        const items = document.querySelectorAll('.media.push-down-20.equal-block');
         const allText = document.body.innerText;
         const data = [];
 
         if (items.length > 0) {
             for (const item of items) {
-                // Ignore elements that don't have enough text to be a trophy card
-                if (item.innerText.trim().length < 5) continue;
+                const titleEl = item.querySelector('.black-head');
+                const descEl = item.querySelector('.fs12');
+                const imgEl = item.querySelector('.media-left img.media-object');
 
-                // Assuming the generic bootstrap column contains the trophy data
-                const textLines = item.innerText.split('\n').map(t => t.trim()).filter(t => t.length > 0);
+                const title = titleEl ? titleEl.textContent.trim() : '';
+                const desc = descEl ? descEl.textContent.trim() : '';
+                const iconHtml = imgEl ? `<img src="${imgEl.src}" style="max-width:50px;">` : '';
 
-                // Usually the first clear line is the title, the rest is description
-                let title = item.querySelector('h3, h4, h5, .title, .name, strong, b')?.textContent.trim();
-                let desc = item.querySelector('p, .desc, .description, span.text-muted')?.textContent.trim();
-
-                if (!title && textLines.length > 0) {
-                    title = textLines[0];
-                }
-                if (!desc && textLines.length > 1) {
-                    desc = textLines.slice(1).join(' ');
-                }
-
-                if (title && !title.toLowerCase().includes('подробнее')) {
-                    // Try to extract an icon or default to trophy
-                    let iconHtml = item.querySelector('img') ? '<img src="' + item.querySelector('img').src + '" style="max-width:50px;">' : '';
+                if (title) {
                     data.push({
                         title: title.replace('Подробнее', '').trim(),
                         description: (desc || '').replace('Подробнее', '').trim(),
-                        raw: item.textContent.trim(),
+                        raw: '',
                         iconHtml: iconHtml
                     });
                 }
             }
         }
 
-        // If specific items weren't found, try parsing the raw text by keywords
+        // Fallback for legacy items or unexpected structure
         if (data.length === 0) {
-            const lines = allText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-            let start = false;
-            for (let i = 0; i < lines.length; i++) {
-                if (lines[i].includes('АКТИВНЫЕ ТУРНИРЫ') || lines[i].includes('ТРОФЕЙНАЯ')) start = true;
-                if (lines[i].includes('ACF - БУДЬ СОБОЙ')) start = false;
-
-                if (start && lines[i].length > 4 && !lines[i].includes('Подробнее') && !lines[i].includes('ТРОФЕЙНАЯ') && !lines[i].includes('АКТИВНЫЕ ТУРНИРЫ')) {
-                    // Check if it's an uppercase title (a trophy name)
-                    if (lines[i] === lines[i].toUpperCase() || lines[i].includes('КУБОК') || lines[i].includes('ЗОЛОТО')) {
-                        let title = lines[i];
-                        let desc = '';
-
-                        // Check previous line for count (e.g., "2" before "FAST CUP")
-                        let count = '';
-                        if (i > 0 && /^\d+$/.test(lines[i - 1])) {
-                            count = ` (x${lines[i - 1]})`;
-                        }
-
-                        // Check next line for description
-                        if (i + 1 < lines.length && !lines[i + 1].includes('Подробнее') && !lines[i + 1].includes('ACF - БУДЬ СОБОЙ') && !/^\d+$/.test(lines[i + 1])) {
-                            desc = lines[i + 1];
-                            // Sometimes description is multiline
-                            if (i + 2 < lines.length && !lines[i + 2].includes('Подробнее') && !lines[i + 2].includes('ACF - БУДЬ СОБОЙ') && lines[i + 2] !== lines[i + 2].toUpperCase()) {
-                                desc += ' ' + lines[i + 2];
-                            }
-                        }
-
-                        title = title + count;
-
-                        // Avoid duplicates
-                        if (!data.find(d => d.title.startsWith(lines[i]))) {
-                            data.push({ title, description: desc, raw: '' });
-                        }
+            const legacyItems = document.querySelectorAll('.col-lg-2.col-md-3.col-sm-4.col-6, .achievement-item, .trophy-item, .award-item');
+            if (legacyItems.length > 0) {
+                for (const item of legacyItems) {
+                    if (item.innerText.trim().length < 5) continue;
+                    const textLines = item.innerText.split('\n').map(t => t.trim()).filter(t => t.length > 0);
+                    let title = item.querySelector('h3, h4, h5, .title, .name, strong, b')?.textContent.trim() || textLines[0];
+                    let desc = item.querySelector('p, .desc, .description, span.text-muted')?.textContent.trim() || (textLines.length > 1 ? textLines.slice(1).join(' ') : '');
+                    if (title && !title.toLowerCase().includes('подробнее')) {
+                        let iconHtml = item.querySelector('img') ? `<img src="${item.querySelector('img').src}" style="max-width:50px;">` : '';
+                        data.push({
+                            title: title.replace('Подробнее', '').trim(),
+                            description: (desc || '').replace('Подробнее', '').trim(),
+                            raw: '',
+                            iconHtml: iconHtml
+                        });
                     }
                 }
             }
         }
+
+        return { achievements: data, raw: allText.substring(0, 5000) };
+    });
 
         return { achievements: data, raw: allText.substring(0, 5000) };
     });
