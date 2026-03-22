@@ -269,9 +269,6 @@ async function scrapeAchievements(page) {
         return { achievements: data, raw: allText.substring(0, 5000) };
     });
 
-        return { achievements: data, raw: allText.substring(0, 5000) };
-    });
-
     return achievements;
 }
 
