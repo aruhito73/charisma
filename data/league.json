@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-26T21:36:08.133Z",
+  "updated": "2026-03-27T13:15:32.945Z",
   "title": "ПРЕМЬЕР-ЛИГА (25 СЕЗОН)",
   "standings": [
     {
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "position": "3\t\t\t\t\t\t\t\t\t-2",
+      "position": "3\t\t\t\t\t\t\t\t\t+1",
       "team": "",
       "cells": [
         "Ponedelnik",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "position": "4\t\t\t\t\t\t\t\t\t+1",
+      "position": "4\t\t\t\t\t\t\t\t\t+2",
       "team": "",
       "cells": [
         "Darkside eSports",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "position": "6\t\t\t\t\t\t\t\t\t+4",
+      "position": "6\t\t\t\t\t\t\t\t\t+1",
       "team": "",
       "cells": [
         "DRAL GAMING",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "position": "7\t\t\t\t\t\t\t\t\t-3",
+      "position": "7\t\t\t\t\t\t\t\t\t+1",
       "team": "",
       "cells": [
         "Nemesis",
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "position": "9\t\t\t\t\t\t\t\t\t+7",
+      "position": "9\t\t\t\t\t\t\t\t\t+2",
       "team": "",
       "cells": [
         "KOBRA",
@@ -143,7 +143,7 @@
       ]
     },
     {
-      "position": "11\t\t\t\t\t\t\t\t\t-4",
+      "position": "11\t\t\t\t\t\t\t\t\t-2",
       "team": "",
       "cells": [
         "MANYCH TEAM",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "position": "13\t\t\t\t\t\t\t\t\t-7",
+      "position": "13\t\t\t\t\t\t\t\t\t-1",
       "team": "",
       "cells": [
         "FC DYSHNO",
