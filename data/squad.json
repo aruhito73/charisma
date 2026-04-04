@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-04T13:04:21.882Z",
+  "updated": "2026-04-04T21:36:47.307Z",
   "players": [
     {
       "name": "127",
@@ -75,9 +75,29 @@
       "avatar": "assets/avatars/wes_capmorgan.png"
     },
     {
-      "name": "Bibendum18",
+      "name": "GHllOllST",
       "cells": [
-        "Bibendum18 (Неизвестно)",
+        "GHllOllST (Неизвестно)",
+        "",
+        "ЦЗ",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0.0"
+      ]
+    },
+    {
+      "name": "Bryouks",
+      "cells": [
+        "Bryouks (Неизвестно)",
         "",
         "ПЗ",
         "0",
@@ -115,9 +135,9 @@
       ]
     },
     {
-      "name": "Bryouks",
+      "name": "Bibendum18",
       "cells": [
-        "Bryouks (Неизвестно)",
+        "Bibendum18 (Неизвестно)",
         "",
         "ПЗ",
         "0",
