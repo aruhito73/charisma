@@ -1,9 +1,9 @@
 {
-  "updated": "2026-04-05T13:06:33.999Z",
+  "updated": "2026-04-05T21:37:01.411Z",
   "title": "ПРЕМЬЕР-ЛИГА (25 СЕЗОН)",
   "standings": [
     {
-      "position": "1\t\t\t\t\t\t\t\t\t+1",
+      "position": "1",
       "team": "",
       "cells": [
         "Krasnodar eSports",
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "position": "2\t\t\t\t\t\t\t\t\t+6",
+      "position": "2",
       "team": "",
       "cells": [
         "Confession",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "position": "3\t\t\t\t\t\t\t\t\t-2",
+      "position": "3",
       "team": "",
       "cells": [
         "Ponedelnik",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "position": "4\t\t\t\t\t\t\t\t\t+1",
+      "position": "4",
       "team": "",
       "cells": [
         "Darkside eSports",
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "position": "5\t\t\t\t\t\t\t\t\t+6",
+      "position": "5",
       "team": "",
       "cells": [
         "CHARISMA",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "position": "6\t\t\t\t\t\t\t\t\t+4",
+      "position": "6",
       "team": "",
       "cells": [
         "DRAL GAMING",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "position": "7\t\t\t\t\t\t\t\t\t-3",
+      "position": "7",
       "team": "",
       "cells": [
         "Nemesis",
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "position": "8\t\t\t\t\t\t\t\t\t-5",
+      "position": "8",
       "team": "",
       "cells": [
         "VFC SUNRISE",
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "position": "9\t\t\t\t\t\t\t\t\t+7",
+      "position": "9",
       "team": "",
       "cells": [
         "KOBRA",
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "position": "10\t\t\t\t\t\t\t\t\t+5",
+      "position": "10",
       "team": "",
       "cells": [
         "Raiders",
@@ -143,7 +143,7 @@
       ]
     },
     {
-      "position": "11\t\t\t\t\t\t\t\t\t-4",
+      "position": "11",
       "team": "",
       "cells": [
         "MANYCH TEAM",
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "position": "12\t\t\t\t\t\t\t\t\t+1",
+      "position": "12",
       "team": "",
       "cells": [
         "VFC BULLS",
@@ -171,7 +171,7 @@
       ]
     },
     {
-      "position": "13\t\t\t\t\t\t\t\t\t-7",
+      "position": "13",
       "team": "",
       "cells": [
         "FC DYSHNO",
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "position": "14\t\t\t\t\t\t\t\t\t-5",
+      "position": "14",
       "team": "",
       "cells": [
         "VFC RED STAR",
@@ -199,7 +199,7 @@
       ]
     },
     {
-      "position": "15\t\t\t\t\t\t\t\t\t-2",
+      "position": "15",
       "team": "",
       "cells": [
         "VFC Cosmos",
@@ -213,7 +213,7 @@
       ]
     },
     {
-      "position": "16\t\t\t\t\t\t\t\t\t-2",
+      "position": "16",
       "team": "",
       "cells": [
         "Echelon FC",
