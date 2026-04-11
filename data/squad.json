@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-11T13:07:16.201Z",
+  "updated": "2026-04-11T21:37:52.798Z",
   "players": [
     {
       "name": "123",
@@ -54,6 +54,26 @@
       ]
     },
     {
+      "name": "GHllOllST",
+      "cells": [
+        "GHllOllST (Неизвестно)",
+        "",
+        "ЦЗ",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0.0"
+      ]
+    },
+    {
       "name": "Wes_CapMorgan",
       "cells": [
         "Wes_CapMorgan (Неизвестно)",
@@ -75,29 +95,9 @@
       "avatar": "assets/avatars/wes_capmorgan.png"
     },
     {
-      "name": "GHllOllST",
+      "name": "Bibendum18",
       "cells": [
-        "GHllOllST (Неизвестно)",
-        "",
-        "ЦЗ",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0.0"
-      ]
-    },
-    {
-      "name": "Bryouks",
-      "cells": [
-        "Bryouks (Неизвестно)",
+        "Bibendum18 (Неизвестно)",
         "",
         "ПЗ",
         "0",
@@ -135,9 +135,9 @@
       ]
     },
     {
-      "name": "Bibendum18",
+      "name": "Bryouks",
       "cells": [
-        "Bibendum18 (Неизвестно)",
+        "Bryouks (Неизвестно)",
         "",
         "ПЗ",
         "0",
@@ -319,27 +319,6 @@
         "7.3"
       ],
       "avatar": "assets/avatars/des-tasted_.png"
-    },
-    {
-      "name": "Abdulaevvv05",
-      "cells": [
-        "Abdulaevvv05 (Неизвестно)",
-        "",
-        "ФРВ",
-        "6",
-        "0",
-        "3",
-        "3",
-        "0",
-        "0",
-        "0",
-        "5",
-        "0",
-        "0",
-        "9",
-        "7.1"
-      ],
-      "avatar": "assets/avatars/abdulaevvv05.jpeg"
     },
     {
       "name": "AeonsOvFrost",
