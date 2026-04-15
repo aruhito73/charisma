@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-15T13:47:06.993Z",
+  "updated": "2026-04-15T21:57:23.653Z",
   "players": [
     {
       "name": "123",
@@ -54,6 +54,26 @@
       ]
     },
     {
+      "name": "GHllOllST",
+      "cells": [
+        "GHllOllST (Неизвестно)",
+        "",
+        "ЦЗ",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0.0"
+      ]
+    },
+    {
       "name": "Wes_CapMorgan",
       "cells": [
         "Wes_CapMorgan (Неизвестно)",
@@ -75,29 +95,9 @@
       "avatar": "assets/avatars/wes_capmorgan.png"
     },
     {
-      "name": "GHllOllST",
+      "name": "Bibendum18",
       "cells": [
-        "GHllOllST (Неизвестно)",
-        "",
-        "ЦЗ",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0",
-        "0.0"
-      ]
-    },
-    {
-      "name": "Bryouks",
-      "cells": [
-        "Bryouks (Неизвестно)",
+        "Bibendum18 (Неизвестно)",
         "",
         "ПЗ",
         "0",
@@ -135,9 +135,9 @@
       ]
     },
     {
-      "name": "Bibendum18",
+      "name": "Bryouks",
       "cells": [
-        "Bibendum18 (Неизвестно)",
+        "Bryouks (Неизвестно)",
         "",
         "ПЗ",
         "0",
@@ -174,27 +174,6 @@
         "7.3"
       ],
       "avatar": "assets/avatars/kirukhapro.png"
-    },
-    {
-      "name": "lily60mili",
-      "cells": [
-        "lily60mili (Неизвестно)",
-        "",
-        "ЦП",
-        "15",
-        "4",
-        "3",
-        "5",
-        "3",
-        "0",
-        "0",
-        "10",
-        "0",
-        "0",
-        "30",
-        "6.8"
-      ],
-      "avatar": "assets/avatars/lily60mili.png"
     },
     {
       "name": "xSw1Tx",
