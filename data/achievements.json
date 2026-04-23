@@ -1,42 +1,36 @@
 {
-  "updated": "2026-03-22T10:17:40.783Z",
+  "updated": "2026-04-23T23:26:59.301Z",
   "achievements": [
     {
       "title": "Поздно Вспомнил",
-      "description": "Выдается игроку за победу в утешительном плей-офф в Fast …",
-      "raw": "",
+      "description": "Выдается игроку за победу в утешительном плей-офф в Fast Cup, который разыгрывался в Международный женский день",
       "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/0acca2c691c41cb418e84.png\" style=\"max-width:50px;\">"
     },
     {
       "title": "Золото Крещения",
       "description": "Выдается за первое место в Fast Cup, который разыгрывался в Праздник Крещения",
-      "raw": "",
       "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/34f0465e7449ba3fa92c_png.png\" style=\"max-width:50px;\">"
     },
     {
-      "title": "Fast Cup",
+      "title": "Fast Cup (x3)",
       "description": "Выдается за победу в Fast Cup, который разыгрывался на сайте ACF",
-      "raw": "",
       "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/71991c6673ce552e0173_png.png\" style=\"max-width:50px;\">"
     },
     {
       "title": "Бронзовый кубок Лиги Европы IPCC",
       "description": "Выдаётся команде, занявшей третье место в Лиге Европы IPCC",
-      "raw": "",
       "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/6682b94e58df32c3ae50img_9849.png\" style=\"max-width:50px;\">"
     },
     {
       "title": "Бронзовый трофей Кубка России",
-      "description": "",
-      "raw": "",
+      "description": "Описание отсутствует",
       "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/9493cc45cf65ad0166931rcup-bronze.png\" style=\"max-width:50px;\">"
     },
     {
       "title": "Серебряный кубок ПФЛ",
-      "description": "",
-      "raw": "",
+      "description": "Описание отсутствует",
       "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/b1718a4237b042a9cf66newcup2silver.png\" style=\"max-width:50px;\">"
     }
   ],
-  "raw": " \n РОССИЙСКАЯ ЛИГА МЕЖДУНАРОДНЫЕ ТУРНИРЫ PRO-ИГРОКИ PRO-КЛУБЫ НОВОСТИ ТУРНИРЫ FAST CUP ТРАНСФЕРЫ ЦЕНТР СТАТИСТИКИ\nРЕГИСТРАЦИЯ\nЛОГИН ИЛИ ЭЛ.ПОЧТА *\nПАРОЛЬ *\n Запомнить?\nЗабыли пароль?\nПерейти к регистрации\n\t\nМЕНЕДЖЕР\nRCHMND\nСТРАНА\nРОССИЯ\nОСНОВАН\n16 АВГ. 2024\nКЛУБНЫЙ XP\n1008.01\n \n \nИ\tВ\tН\tП\tЗГ\tПГ\tРМ\n216\t125\t36\t55\t501\t251\t250\nРЕЙТИНГ КОМАНДЫ\n210.57\n1 место в онлайн рейтинге\nЛУЧШИЙ ИГРОК ФЕВРАЛЯ\nDES-TASTED_\nЗа месяц по XP\nО КЛУБЕ СОСТАВ КАЛЕНДАРЬ ИГР СТАТИСТИКА ТРАНСФЕРЫ ТРОФЕЙНАЯ АКТИВНЫЕ ТУРНИРЫ\n\t\nПОЗДНО ВСПОМНИЛ\nВыдается игроку за победу в утешительном плей-офф в Fast …\nПодробнее\n\t\nЗОЛОТО КРЕЩЕНИЯ\nВыдается за первое место в Fast Cup, который разыгрывался в Праздник Крещения\nПодробнее\n2\n\t\nFAST CUP\nВыдается за победу в Fast Cup, который разыгрывался на сайте ACF\nПодробнее\n\t\nБРОНЗОВЫЙ КУБОК ЛИГИ ЕВРОПЫ IPCC\nВыдаётся команде, занявшей третье место в Лиге Европы IPCC\nПодробнее\n\t\nБРОНЗОВЫЙ ТРОФЕЙ КУБКА РОССИИ\nПодробнее\n\t\nСЕРЕБРЯНЫЙ КУБОК ПФЛ\nПодробнее\nACF - БУДЬ СОБОЙ\nО проекте\nМы в социальных сетях:\nОбратная связь\nПравовая информация\nАдминистрация не несет ответственности за загруженные пользователями данные.\nОСНОВНЫЕ РАЗДЕЛЫ\nИгровые арены\nPRO-Клубы\nЦентр статистики\n \nРегистрация\nТурниры\nНовости\nТрансферы\nРегламент\nACF - АССОЦИАЦИЯ КИБЕРФУТБОЛА.\nТурниры по FIFA в режиме ProClubs.\nall rights reserved © ACF. 2007-2026\n НАВЕРХ\nПривет!\n\nТы попал на сайт ACF - крупнейшего в СНГ организатора турниров по Профи Клубам (Режим 11x11 в EA FC).\n\nРегистрируйся на сайте, чтобы найти команду!\n\nА следить за актуальными новостями проекта лучше всего в нашей группе Вконтакте: https://vk.com/acf_official\n\nЗакрыть"
+  "raw": ""
 }

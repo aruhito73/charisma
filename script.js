@@ -239,7 +239,7 @@ function renderSchedule(data) {
   // If Upcoming < minVisible, we pad with the most recent Past matches up to minVisible.
   // If Upcoming >= minVisible, we still hide the Past matches behind the toggle.
   const minVisible = 5;
-  const visibleCount = Math.max(upcomingMatches.length, minVisible);
+  const visibleCount = minVisible;
   const isExpandable = sortedMatches.length > visibleCount;
 
   const matchesHTML = sortedMatches.map((m, index) => {
@@ -277,7 +277,7 @@ function renderSchedule(data) {
   if (isExpandable) {
     buttonHTML = `
       <div class="schedule-toggle">
-        <button id="toggleScheduleBtn" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Показать сыгранные матчи 👇</button>
+        <button id="toggleScheduleBtn" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Показать все матчи 👇</button>
       </div>
     `;
   }
@@ -292,7 +292,7 @@ function renderSchedule(data) {
 
       if (isExpanded) {
         hiddenMatches.forEach(el => el.style.display = 'none');
-        btn.textContent = 'Показать сыгранные матчи 👇';
+        btn.textContent = 'Показать все матчи 👇';
         btn.classList.remove('expanded');
         document.getElementById('schedule').scrollIntoView({ behavior: 'smooth' });
       } else {
