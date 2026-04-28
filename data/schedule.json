@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-28T14:21:13.317Z",
+  "updated": "2026-04-28T22:02:31.635Z",
   "matches": [
     {
       "round": "1 тур",
@@ -23,13 +23,6 @@
       "score": "0:0"
     },
     {
-      "round": "4 тур",
-      "date": "28 апр. 2026, 22:30",
-      "home": "CHARISMA",
-      "away": "Raiders",
-      "score": "-:-"
-    },
-    {
       "round": "5 тур",
       "date": "29 апр. 2026, 22:30",
       "home": "MONICA",
@@ -48,6 +41,13 @@
       "date": "05 мая 2026, 22:30",
       "home": "VFC BULLS",
       "away": "CHARISMA",
+      "score": "-:-"
+    },
+    {
+      "round": "4 тур",
+      "date": "05 мая 2026, 23:00",
+      "home": "CHARISMA",
+      "away": "Raiders",
       "score": "-:-"
     },
     {
