@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-29T14:07:00.421Z",
+  "updated": "2026-04-30T14:05:30.944Z",
   "matches": [
     {
       "round": "1 тур",
@@ -21,13 +21,6 @@
       "home": "FAKEL YAMAL FC",
       "away": "CHARISMA",
       "score": "0:0"
-    },
-    {
-      "round": "5 тур",
-      "date": "29 апр. 2026, 22:30",
-      "home": "MONICA",
-      "away": "CHARISMA",
-      "score": "-:-"
     },
     {
       "round": "6 тур",
@@ -61,6 +54,13 @@
       "round": "9 тур",
       "date": "07 мая 2026, 22:30",
       "home": "Confession",
+      "away": "CHARISMA",
+      "score": "-:-"
+    },
+    {
+      "round": "5 тур",
+      "date": "07 мая 2026, 23:00",
+      "home": "MONICA",
       "away": "CHARISMA",
       "score": "-:-"
     },
