@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-01T13:26:32.970Z",
+  "updated": "2026-05-01T21:57:00.008Z",
   "matches": [
     {
       "round": "1 тур",
@@ -9,6 +9,13 @@
       "score": "2:0"
     },
     {
+      "round": "2 тур",
+      "date": "23 апр. 2026, 23:00",
+      "home": "FAKEL YAMAL FC",
+      "away": "CHARISMA",
+      "score": "0:0"
+    },
+    {
       "round": "3 тур",
       "date": "23 апр. 2026, 22:30",
       "home": "CHARISMA",
@@ -16,11 +23,18 @@
       "score": "6:0"
     },
     {
-      "round": "2 тур",
-      "date": "23 апр. 2026, 23:00",
-      "home": "FAKEL YAMAL FC",
+      "round": "4 тур",
+      "date": "05 мая 2026, 23:00",
+      "home": "CHARISMA",
+      "away": "Raiders",
+      "score": "-:-"
+    },
+    {
+      "round": "5 тур",
+      "date": "07 мая 2026, 23:00",
+      "home": "MONICA",
       "away": "CHARISMA",
-      "score": "0:0"
+      "score": "-:-"
     },
     {
       "round": "6 тур",
@@ -37,13 +51,6 @@
       "score": "-:-"
     },
     {
-      "round": "4 тур",
-      "date": "05 мая 2026, 23:00",
-      "home": "CHARISMA",
-      "away": "Raiders",
-      "score": "-:-"
-    },
-    {
       "round": "8 тур",
       "date": "06 мая 2026, 22:30",
       "home": "CHARISMA",
@@ -54,13 +61,6 @@
       "round": "9 тур",
       "date": "07 мая 2026, 22:30",
       "home": "Confession",
-      "away": "CHARISMA",
-      "score": "-:-"
-    },
-    {
-      "round": "5 тур",
-      "date": "07 мая 2026, 23:00",
-      "home": "MONICA",
       "away": "CHARISMA",
       "score": "-:-"
     },
