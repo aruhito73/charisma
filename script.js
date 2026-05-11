@@ -187,6 +187,11 @@ function renderCup(data) {
   const container = document.getElementById('cupPath');
   if (!container || !data?.matches) return;
 
+  if (data.matches.length === 0) {
+    container.innerHTML = '<div style="text-align: center; padding: 2rem; color: #888;">Матчи кубка еще не начались</div>';
+    return;
+  }
+
   container.innerHTML = data.matches.map(m => {
     const isWin = m.result === 'win';
     const matchClass = isWin ? 'won' : 'lost';

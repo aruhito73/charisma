@@ -40,7 +40,8 @@ const URLS = {
     achievements: `https://cyberfootball.online/clubs/achievements/${CLUB_ID}`,
     league: `https://cyberfootball.online/tournament/table/${LEAGUE_ID}`,
     cup: `https://cyberfootball.online/tournament/table/${CUP_ID}`,
-    schedule: `https://cyberfootball.online/tournament/calendar/${LEAGUE_ID}?club=${CLUB_ID}`
+    schedule: `https://cyberfootball.online/tournament/calendar/${LEAGUE_ID}?club=${CLUB_ID}`,
+    transfers: `https://cyberfootball.online/clubs/transfers/${CLUB_ID}`
 };
 
 const DATA_DIR = path.join(__dirname, 'data');
@@ -113,29 +114,68 @@ async function scrapeSquad(page) {
         return { raw: "No players found", players: [] };
     }
 
-    console.log(`   Found ${playersInfo.length} players. Applying manual join dates...`);
+    console.log(`   Found ${playersInfo.length} players. Applying join dates...`);
 
     // =========================================================================
     // РУЧНАЯ НАСТРОЙКА ДАТ РЕГИСТРАЦИИ ИГРОКОВ (ДД.ММ.ГГГГ)
-    // Впишите сюда актуальные даты для каждого игрока.
-    // Если игрока здесь нет, будет отображаться "Неизвестно".
     // =========================================================================
-    const manualDates = {
+    let playerDates = {
         "Rchmnd": "16.08.2024",
         "MrHoolio": "16.08.2024",
         "Istok_2503": "12.09.2024",
-        "fezake": "12.04.2026",
-        "AeonsOvFrost": "12.04.2026",
-        "DeS-Tasted_": "10.04.2026",
-        "vovan3922": "10.04.2026",
-        "Bibendum18": "10.04.2026",
-        "S1ZeT_H8Me": "10.04.2026",
-        "GHllOllST": "10.04.2026",
-        "Wes_CapMorgan": "10.04.2026",
     };
 
+    // Scrape transfer dates to dynamically augment playerDates
+    try {
+        console.log('   Scraping transfer history for join dates...');
+        await page.goto(URLS.transfers, { waitUntil: 'networkidle2', timeout: 30000 });
+        await waitForContent(page);
+        
+        const transfersMap = await page.evaluate(() => {
+            const results = {};
+            const monthMap = {
+                "января": "01", "февраля": "02", "марта": "03", "апреля": "04", "мая": "05", "июня": "06",
+                "июля": "07", "августа": "08", "сентября": "09", "октября": "10", "ноября": "11", "декабря": "12"
+            };
+            const blocks = document.querySelectorAll('.uiblock-white');
+            for (const block of blocks) {
+                let dateStr = "Неизвестно";
+                const blockText = block.innerText.trim();
+                const dateMatch = blockText.match(/^(\d{1,2})\s+([а-яА-Я]+)\s+(\d{4})/);
+                if (dateMatch) {
+                    let day = dateMatch[1];
+                    if (day.length === 1) day = "0" + day;
+                    const month = monthMap[dateMatch[2].toLowerCase()];
+                    const year = dateMatch[3];
+                    if (month) dateStr = `${day}.${month}.${year}`;
+                }
+                
+                const rows = block.querySelectorAll('.arena-transfer-row');
+                for (const row of rows) {
+                    const playerEl = row.querySelector('a[href*="/player/"], a[href*="/players/"]');
+                    const player = playerEl ? playerEl.innerText.trim() : row.innerText.trim().split('\n')[0];
+                    
+                    const teamEls = Array.from(row.querySelectorAll('.team-name')).map(el => el.innerText.trim());
+                    if (teamEls.length >= 2 && teamEls[1] === 'CHARISMA') {
+                        // Only set if we haven't found a more recent transfer for them
+                        if (!results[player] && dateStr !== "Неизвестно") {
+                            results[player] = dateStr;
+                        }
+                    }
+                }
+            }
+            return results;
+        });
+
+        // Merge dynamic dates with manual dates
+        playerDates = { ...playerDates, ...transfersMap };
+        console.log(`   Found ${Object.keys(transfersMap).length} transfer dates automatically.`);
+    } catch (e) {
+        console.log('   Could not load transfers, using fallback manual dates.');
+    }
+
     for (const player of playersInfo) {
-        let joinDate = manualDates[player.name] || "Неизвестно";
+        let joinDate = playerDates[player.name] || "Неизвестно";
 
         // Append the found date (or dummy) to the cells array so the calculation works
         let baseDateStr = player.cells[0] || player.name;
@@ -389,14 +429,10 @@ async function main() {
         );
 
 
-        // Preserve cup matches if scraper returns empty array
         let existingCup = {};
         const cupPath = path.join(DATA_DIR, 'cup.json');
         if (fs.existsSync(cupPath)) {
             existingCup = JSON.parse(fs.readFileSync(cupPath, 'utf8'));
-        }
-        if (cupData.matches && cupData.matches.length === 0 && existingCup.matches && existingCup.matches.length > 0) {
-            cupData.matches = existingCup.matches;
         }
 
         fs.writeFileSync(
