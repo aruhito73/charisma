@@ -170,7 +170,8 @@ async function scrapeLeague(page) {
                 if (cells.length < 4) continue;
 
                 const cellTexts = Array.from(cells).map(c => c.textContent.trim());
-                const teamName = cellTexts[1];
+                const nameEl = row.querySelector('a') || cells[1];
+                const teamName = nameEl ? nameEl.textContent.trim() : cellTexts[1];
 
                 standings.push({
                     position: cellTexts[0],

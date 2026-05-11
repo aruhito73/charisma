@@ -1,10 +1,10 @@
 {
-  "updated": "2026-05-11T08:29:50.915Z",
+  "updated": "2026-05-10T21:53:04.238Z",
   "title": "Премьер-Лига (26 Сезон)",
   "standings": [
     {
       "position": "1",
-      "team": "Ponedelnik",
+      "team": "",
       "cells": [
         "Ponedelnik",
         "8",
@@ -19,7 +19,7 @@
     },
     {
       "position": "2",
-      "team": "FAKEL YAMAL FC",
+      "team": "",
       "cells": [
         "FAKEL YAMAL FC",
         "9",
@@ -34,7 +34,7 @@
     },
     {
       "position": "3",
-      "team": "CHARISMA",
+      "team": "",
       "cells": [
         "CHARISMA",
         "9",
@@ -49,7 +49,7 @@
     },
     {
       "position": "4",
-      "team": "Confession",
+      "team": "",
       "cells": [
         "Confession",
         "9",
@@ -64,7 +64,7 @@
     },
     {
       "position": "5",
-      "team": "Krasnodar eSports",
+      "team": "",
       "cells": [
         "Krasnodar eSports",
         "7",
@@ -79,7 +79,7 @@
     },
     {
       "position": "6",
-      "team": "Darkside eSports",
+      "team": "",
       "cells": [
         "Darkside eSports",
         "9",
@@ -94,7 +94,7 @@
     },
     {
       "position": "7",
-      "team": "VFC BULLS",
+      "team": "",
       "cells": [
         "VFC BULLS",
         "9",
@@ -109,7 +109,7 @@
     },
     {
       "position": "8",
-      "team": "Amity",
+      "team": "",
       "cells": [
         "Amity",
         "9",
@@ -124,7 +124,7 @@
     },
     {
       "position": "9",
-      "team": "Nemesis",
+      "team": "",
       "cells": [
         "Nemesis",
         "8",
@@ -139,7 +139,7 @@
     },
     {
       "position": "10",
-      "team": "KOBRA",
+      "team": "",
       "cells": [
         "KOBRA",
         "9",
@@ -154,7 +154,7 @@
     },
     {
       "position": "11",
-      "team": "All over the world",
+      "team": "",
       "cells": [
         "All over the world",
         "9",
@@ -169,7 +169,7 @@
     },
     {
       "position": "12",
-      "team": "Raiders",
+      "team": "",
       "cells": [
         "Raiders",
         "8",
@@ -184,7 +184,7 @@
     },
     {
       "position": "13",
-      "team": "VFC SUNRISE",
+      "team": "",
       "cells": [
         "VFC SUNRISE",
         "8",
@@ -199,7 +199,7 @@
     },
     {
       "position": "14",
-      "team": "MONICA",
+      "team": "",
       "cells": [
         "MONICA",
         "7",
@@ -214,7 +214,7 @@
     },
     {
       "position": "15",
-      "team": "RAMPAGE eSport",
+      "team": "",
       "cells": [
         "RAMPAGE eSport",
         "9",
@@ -229,7 +229,7 @@
     },
     {
       "position": "16",
-      "team": "DRAL GAMING",
+      "team": "",
       "cells": [
         "DRAL GAMING",
         "9",
