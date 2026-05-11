@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-23T23:26:59.301Z",
+  "updated": "2026-05-11T08:29:50.915Z",
   "matches": [
     {
       "round": "1 тур",
@@ -9,13 +9,6 @@
       "score": "2:0"
     },
     {
-      "round": "3 тур",
-      "date": "23 апр. 2026, 22:30",
-      "home": "CHARISMA",
-      "away": "DRAL GAMING",
-      "score": "6:0"
-    },
-    {
       "round": "2 тур",
       "date": "23 апр. 2026, 23:00",
       "home": "FAKEL YAMAL FC",
@@ -23,53 +16,60 @@
       "score": "0:0"
     },
     {
+      "round": "3 тур",
+      "date": "23 апр. 2026, 22:30",
+      "home": "CHARISMA",
+      "away": "DRAL GAMING",
+      "score": "6:0"
+    },
+    {
       "round": "4 тур",
-      "date": "28 апр. 2026, 22:30",
+      "date": "05 мая 2026, 23:00",
       "home": "CHARISMA",
       "away": "Raiders",
-      "score": "-:-"
+      "score": "2:2"
     },
     {
       "round": "5 тур",
-      "date": "29 апр. 2026, 22:30",
+      "date": "07 мая 2026, 23:00",
       "home": "MONICA",
       "away": "CHARISMA",
-      "score": "-:-"
+      "score": "0:1"
     },
     {
       "round": "6 тур",
       "date": "30 апр. 2026, 22:30",
       "home": "CHARISMA",
       "away": "All over the world",
-      "score": "-:-"
+      "score": "1:1"
     },
     {
       "round": "7 тур",
       "date": "05 мая 2026, 22:30",
       "home": "VFC BULLS",
       "away": "CHARISMA",
-      "score": "-:-"
+      "score": "2:2"
     },
     {
       "round": "8 тур",
       "date": "06 мая 2026, 22:30",
       "home": "CHARISMA",
       "away": "RAMPAGE eSport",
-      "score": "-:-"
+      "score": "1:0"
     },
     {
       "round": "9 тур",
       "date": "07 мая 2026, 22:30",
       "home": "Confession",
       "away": "CHARISMA",
-      "score": "-:-"
+      "score": "2:2"
     },
     {
       "round": "10 тур",
       "date": "12 мая 2026, 22:30",
       "home": "CHARISMA",
       "away": "Darkside eSports",
-      "score": "1:5"
+      "score": "-:-"
     },
     {
       "round": "11 тур",

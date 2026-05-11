@@ -142,7 +142,8 @@ function renderLeague(data) {
     const d = row.cells ? row.cells[3] : row.d;
     const l = row.cells ? row.cells[4] : row.l;
     const goals = row.cells ? row.cells[5] : row.goals;
-    const pts = row.cells ? row.cells[6] : row.pts;
+    const gd = row.cells ? row.cells[6] : '';
+    const pts = row.cells ? row.cells[7] : row.pts;
 
     const isCharisma = team === 'CHARISMA';
     let rowClass = isCharisma ? ' class="highlight-row"' : '';
@@ -158,6 +159,7 @@ function renderLeague(data) {
         <td>${d}</td>
         <td>${l}</td>
         <td>${goals}</td>
+        <td>${gd}</td>
         <td><strong>${pts}</strong></td>
       </tr>
     `;
