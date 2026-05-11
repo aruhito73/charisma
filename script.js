@@ -56,8 +56,23 @@ function renderSquad(data) {
     const position = p.position || (p.cells ? p.cells[2] : '');
     const positionRu = p.positionRu || posMap[position] || position;
     const matches = p.matches !== undefined ? p.matches : (p.cells ? parseInt(p.cells[3]) || 0 : 0);
-    const goals = p.goals !== undefined ? p.goals : (p.cells ? parseInt(p.cells[4]) || 0 : 0);
-    const assists = p.assists !== undefined ? p.assists : (p.cells ? parseInt(p.cells[5]) || 0 : 0);
+    
+    const isGK = position === 'ВР';
+    
+    let goals, assists, stat1Label, stat2Label;
+    
+    if (isGK) {
+      stat1Label = 'Сейвы';
+      stat2Label = 'Сухие матчи';
+      goals = p.cells ? parseInt(p.cells[8]) || 0 : 0; // Index 8 is saves
+      assists = p.cells ? parseInt(p.cells[9]) || 0 : 0; // Index 9 is clean sheets
+    } else {
+      stat1Label = 'Голы';
+      stat2Label = 'Ассисты';
+      goals = p.goals !== undefined ? p.goals : (p.cells ? parseInt(p.cells[4]) || 0 : 0);
+      assists = p.assists !== undefined ? p.assists : (p.cells ? parseInt(p.cells[5]) || 0 : 0);
+    }
+    
     const ratingStr = p.cells ? p.cells[p.cells.length - 1] : '0';
 
     // Extract join date from the name string if available
@@ -85,11 +100,11 @@ function renderSquad(data) {
           </div>
           <div class="player-stat">
             <div class="player-stat-value">${goals}</div>
-            <div class="player-stat-label">Голы</div>
+            <div class="player-stat-label">${stat1Label}</div>
           </div>
           <div class="player-stat">
             <div class="player-stat-value">${assists}</div>
-            <div class="player-stat-label">Ассисты</div>
+            <div class="player-stat-label">${stat2Label}</div>
           </div>
           <div class="player-stat">
             <div class="player-stat-value" style="font-size: 1rem; margin-top: 4px;">${joinDateRaw}</div>
