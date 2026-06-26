@@ -1,6 +1,11 @@
 {
-  "updated": "2026-06-26T14:32:00.024Z",
+  "updated": "2026-06-26T22:17:46.189Z",
   "achievements": [
+    {
+      "title": "Бронзовый кубок Премьер Лиги",
+      "description": "Описание отсутствует",
+      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/76f5b391a9d16997a9afbronzovyy-pl.png\" style=\"max-width:50px;\">"
+    },
     {
       "title": "Поздно Вспомнил",
       "description": "Выдается игроку за победу в утешительном плей-офф в Fast Cup, который разыгрывался в Международный женский день",
