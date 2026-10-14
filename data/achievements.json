@@ -1,41 +1,5 @@
 {
-  "updated": "2026-10-14T16:48:17.494Z",
-  "achievements": [
-    {
-      "title": "Бронзовый кубок Премьер Лиги",
-      "description": "Описание отсутствует",
-      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/76f5b391a9d16997a9afbronzovyy-pl.png\" style=\"max-width:50px;\">"
-    },
-    {
-      "title": "Поздно Вспомнил",
-      "description": "Выдается игроку за победу в утешительном плей-офф в Fast Cup, который разыгрывался в Международный женский день",
-      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/0acca2c691c41cb418e84.png\" style=\"max-width:50px;\">"
-    },
-    {
-      "title": "Золото Крещения",
-      "description": "Выдается за первое место в Fast Cup, который разыгрывался в Праздник Крещения",
-      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/34f0465e7449ba3fa92c_png.png\" style=\"max-width:50px;\">"
-    },
-    {
-      "title": "Fast Cup (x4)",
-      "description": "Выдается за победу в Fast Cup, который разыгрывался на сайте ACF",
-      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/71991c6673ce552e0173_png.png\" style=\"max-width:50px;\">"
-    },
-    {
-      "title": "Бронзовый кубок Лиги Европы IPCC",
-      "description": "Выдаётся команде, занявшей третье место в Лиге Европы IPCC",
-      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/6682b94e58df32c3ae50img_9849.png\" style=\"max-width:50px;\">"
-    },
-    {
-      "title": "Бронзовый трофей Кубка России",
-      "description": "Описание отсутствует",
-      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/9493cc45cf65ad0166931rcup-bronze.png\" style=\"max-width:50px;\">"
-    },
-    {
-      "title": "Серебряный кубок ПФЛ",
-      "description": "Описание отсутствует",
-      "iconHtml": "<img src=\"https://cyberfootball.online/cdn/achievements/b1718a4237b042a9cf66newcup2silver.png\" style=\"max-width:50px;\">"
-    }
-  ],
+  "updated": "2026-10-14T23:46:06.059Z",
+  "achievements": [],
   "raw": ""
 }
