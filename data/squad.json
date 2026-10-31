@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-30T17:51:13.026Z",
+  "updated": "2026-10-31T00:33:02.430Z",
   "players": [
     {
       "name": "S1ZeT_EvolElina",
       "cells": [
-        "S1ZeT_EvolElina (Неизвестно)",
+        "S1ZeT_EvolElina                                \n                                (П) (Неизвестно)",
         "",
         "ВР",
         "52",
@@ -84,7 +84,7 @@
     {
       "name": "Bryouks",
       "cells": [
-        "Bryouks                                \n                                                                     (A) (Неизвестно)",
+        "Bryouks                                \n                                (A) (Неизвестно)",
         "",
         "ПЗ",
         "53",
@@ -144,7 +144,7 @@
     {
       "name": "xSw1Tx",
       "cells": [
-        "xSw1Tx                                \n                                                                     (A) (Неизвестно)",
+        "xSw1Tx                                \n                                (A) (Неизвестно)",
         "",
         "ЦП",
         "57",
@@ -204,7 +204,7 @@
     {
       "name": "Rchmnd",
       "cells": [
-        "Rchmnd                                \n                                                                     (M) (16.08.2024)",
+        "Rchmnd                                \n                                (M) (16.08.2024)",
         "",
         "ПП",
         "201",
