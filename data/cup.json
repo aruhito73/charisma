@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T22:04:08.690Z",
+  "updated": "2026-11-25T21:20:06.065Z",
   "title": "CDbException",
   "matches": [],
   "raw": "CDbException\n\nCDbConnection failed to open the DB connection."
